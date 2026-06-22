@@ -281,11 +281,6 @@
       <div class="recv">寶寶開始會回應你了 ⤵</div>
       <span class="eyebrow">7〜12個月</span>
       <h2>還不會自己玩，<br>但會回應巧虎了。</h2>
-      <div class="ph r43">大人套著巧虎玩躲貓貓／寶寶笑<small>示意圖（待替換）</small></div>
-      <p class="group-title">這樣玩（大人套在手上）</p>
-      <div class="play-row"><span class="play-pill">躲貓貓</span><span class="rt"><span class="says">巧虎在這裡！</span></span></div>
-      <div class="play-row"><span class="play-pill">叫名字</span><span class="rt">從不同方向叫寶寶。</span></div>
-      <div class="play-row"><span class="play-pill">一來一往</span><span class="rt"><span class="says">啊—，你在說話呀？</span></span></div>
       <p class="group-title">寶寶的反應</p>
       <div class="chips"><span class="chip blue">笑出聲</span><span class="chip blue">轉頭找巧虎</span><span class="chip blue">伸手想摸</span></div>
       <div class="role-box" data-age="s2"></div>
@@ -297,11 +292,6 @@
       <div class="recv">這個時候，最愛模仿大人 ⤵</div>
       <span class="eyebrow">1〜1.5歲</span>
       <h2>看著巧虎做，<br>寶寶也想跟著做。</h2>
-      <div class="ph r43">巧虎拍手→寶寶跟著做<small>示意圖（待替換）</small></div>
-      <p class="group-title">這樣玩</p>
-      <div class="play-row"><span class="play-pill">模仿</span><span class="rt">拍手、揮手掰掰、親一下。</span></div>
-      <div class="play-row"><span class="play-pill">第一個字</span><span class="rt"><span class="says">球—</span><span class="says">汪汪</span></span></div>
-      <div class="play-row"><span class="play-pill">叫名字</span><span class="rt"><span class="says">你在哪裡呀？</span></span></div>
       <p class="group-title">寶寶的反應</p>
       <div class="chips"><span class="chip blue">跟著拍手</span><span class="chip blue">模仿聲音</span><span class="chip blue">試著說出口</span></div>
       <div class="role-box" data-age="s3"></div>
@@ -313,11 +303,6 @@
       <div class="recv">巧虎變成孩子自己的好朋友 ⤵</div>
       <span class="eyebrow">1.5〜2歲</span>
       <h2>一起玩，也一起生活。</h2>
-      <div class="ph r43">巧虎示範刷牙→孩子跟著做<small>示意圖（待替換）</small></div>
-      <p class="group-title">這樣玩</p>
-      <div class="play-row"><span class="play-pill">生活習慣</span><span class="rt"><span class="says">去刷牙囉，一起？</span></span></div>
-      <div class="play-row"><span class="play-pill">扮家家酒</span><span class="rt">餵巧虎吃飯、哄巧虎睡覺。</span></div>
-      <div class="play-row"><span class="play-pill">對話</span><span class="rt"><span class="says">今天玩了什麼呀？</span></span></div>
       <p class="group-title">孩子的反應</p>
       <div class="chips"><span class="chip blue">自己拿牙刷</span><span class="chip blue">抱著巧虎說話</span><span class="chip blue">多了好多新詞</span></div>
       <div class="role-box" data-age="s4"></div>
@@ -395,34 +380,37 @@
 
   const roleData={
     s1:{
-      '媽媽':{line:'早安～今天也好可愛喔', img:'images/play-0-6-mom.jpg'},
-      '爸爸':{line:'哇～你看到巧虎了嗎？', img:'images/play-0-6-dad.jpg'},
-      '阿公':{line:'阿公來陪你玩囉～', img:'images/play-0-6-grandpa.jpg'},
-      '阿嬤':{line:'好好玩喔～對不對？', img:'images/play-0-6-grandma.jpg'}
+      '媽媽':{line:'早安～今天也好可愛喔', img:'images/play-0-6-mom.jpg', say:'把巧虎放在寶寶臉前慢慢移動，輕聲打招呼。', tip:'不用太多話，聲音和表情就夠了。'},
+      '爸爸':{line:'哇～你看到巧虎了嗎？', img:'images/play-0-6-dad.jpg', say:'把巧虎放在寶寶臉前慢慢移動，輕聲打招呼。', tip:'不用太多話，聲音和表情就夠了。'},
+      '阿公':{line:'阿公來陪你玩囉～', img:'images/play-0-6-grandpa.jpg', say:'把巧虎放在寶寶臉前慢慢移動，輕聲打招呼。', tip:'不用太多話，聲音和表情就夠了。'},
+      '阿嬤':{line:'好好玩喔～對不對？', img:'images/play-0-6-grandma.jpg', say:'把巧虎放在寶寶臉前慢慢移動，輕聲打招呼。', tip:'不用太多話，聲音和表情就夠了。'}
     },
     s2:{
-      '媽媽':{say:'跟巧虎一起玩躲貓貓，等寶寶笑了再出現。',tip:'寶寶笑了，就多玩幾次。'},
-      '爸爸':{say:'用巧虎從不同方向叫寶寶名字，讓他轉頭找。',tip:'聲音誇張一點，寶寶更愛。'},
-      '阿公':{say:'寶寶發出聲音時，讓巧虎回應「是喔～真的嗎？」',tip:'把寶寶的「啊—」當成在跟你說話。'},
-      '阿嬤':{say:'讓巧虎跟寶寶你一句、我一句。',tip:'說完記得等一下，給寶寶回應的時間。'}
+      '媽媽':{line:'巧虎在這裡～找到你了！', img:'images/play-7-12-mom.jpg', say:'跟巧虎一起玩躲貓貓，等寶寶笑了再出現。', tip:'寶寶笑了，就多玩幾次。'},
+      '爸爸':{line:'寶寶～巧虎在哪裡呀？', img:'images/play-7-12-dad.jpg', say:'用巧虎從不同方向叫寶寶名字，讓他轉頭找。', tip:'聲音誇張一點，寶寶更愛。'},
+      '阿公':{line:'是喔～真的嗎？', img:'images/play-7-12-grandpa.jpg', say:'寶寶發出聲音時，讓巧虎回應「是喔～真的嗎？」', tip:'把寶寶的「啊—」當成在跟你說話。'},
+      '阿嬤':{line:'你說、我聽，再換你～', img:'images/play-7-12-grandma.jpg', say:'讓巧虎跟寶寶你一句、我一句。', tip:'說完記得等一下，給寶寶回應的時間。'}
     },
     s3:{
-      '媽媽':{say:'讓巧虎拍手、掰掰，邀寶寶一起做。',tip:'寶寶跟著做了，就拍手稱讚他。'},
-      '爸爸':{say:'用巧虎指著東西說名字「球—」「車—」。',tip:'慢慢說、清楚說，寶寶會跟著念。'},
-      '阿公':{say:'讓巧虎叫寶寶的名字、招招手。',tip:'重複幾次，寶寶就會回應。'},
-      '阿嬤':{say:'用巧虎唱簡單的兒歌，配上動作。',tip:'同一首多唱幾次，寶寶會跟著哼。'}
+      '媽媽':{line:'拍拍手～掰掰！', img:'images/play-1-15-mom.jpg', say:'讓巧虎拍手、掰掰，邀寶寶一起做。', tip:'寶寶跟著做了，就拍手稱讚他。'},
+      '爸爸':{line:'球—、車—，跟我念～', img:'images/play-1-15-dad.jpg', say:'用巧虎指著東西說名字「球—」「車—」。', tip:'慢慢說、清楚說，寶寶會跟著念。'},
+      '阿公':{line:'寶寶～這裡這裡！', img:'images/play-1-15-grandpa.jpg', say:'讓巧虎叫寶寶的名字、招招手。', tip:'重複幾次，寶寶就會回應。'},
+      '阿嬤':{line:'我們一起唱歌囉～', img:'images/play-1-15-grandma.jpg', say:'用巧虎唱簡單的兒歌，配上動作。', tip:'同一首多唱幾次，寶寶會跟著哼。'}
     },
     s4:{
-      '媽媽':{say:'讓巧虎先示範刷牙、收玩具，再邀寶寶一起。',tip:'「巧虎做到了，換你囉！」最有效。'},
-      '爸爸':{say:'跟孩子玩扮家家酒，讓孩子照顧巧虎。',tip:'讓孩子當哥哥姊姊照顧巧虎，他會很投入。'},
-      '阿公':{say:'用巧虎問「今天玩了什麼呀？」等孩子回答。',tip:'多問、多等，孩子的話會越來越多。'},
-      '阿嬤':{say:'睡前讓巧虎跟孩子說「今天辛苦了，晚安」。',tip:'固定的睡前一句話，讓孩子安心。'}
+      '媽媽':{line:'巧虎要刷牙囉，一起？', img:'images/play-15-2-mom.jpg', say:'讓巧虎先示範刷牙、收玩具，再邀寶寶一起。', tip:'「巧虎做到了，換你囉！」最有效。'},
+      '爸爸':{line:'幫巧虎餵飯飯～', img:'images/play-15-2-dad.jpg', say:'跟孩子玩扮家家酒，讓孩子照顧巧虎。', tip:'讓孩子當哥哥姊姊照顧巧虎，他會很投入。'},
+      '阿公':{line:'今天玩了什麼呀？', img:'images/play-15-2-grandpa.jpg', say:'用巧虎問「今天玩了什麼呀？」等孩子回答。', tip:'多問、多等，孩子的話會越來越多。'},
+      '阿嬤':{line:'今天辛苦了，晚安～', img:'images/play-15-2-grandma.jpg', say:'睡前讓巧虎跟孩子說「今天辛苦了，晚安」。', tip:'固定的睡前一句話，讓孩子安心。'}
     }
   };
 
-  // 0〜6個月は遊び方とコツを共通にし、セリフと画像だけ役割で変える
-  const S1_COMMON={play:'把巧虎放在寶寶臉前慢慢移動，輕聲打招呼。', tip:'不用太多話，聲音和表情就夠了。'};
-  const S1_IMG_READY={'媽媽':true,'爸爸':true,'阿公':true,'阿嬤':true};  // 画像が用意できた役割だけ true にする
+  const STAGE_LABEL={s1:'0〜6個月',s2:'7〜12個月',s3:'1〜1.5歲',s4:'1.5〜2歲'};
+  // 画像が用意できた「年齢×役割」だけ true にする（true のものは実画像、それ以外は示意枠）
+  const IMG_READY={
+    s1:{'媽媽':true,'爸爸':true,'阿公':true,'阿嬤':true},
+    s2:{}, s3:{}, s4:{}
+  };
 
   let curStage=null, curRole=null;
 
@@ -430,23 +418,16 @@
     if(!curRole) return;
     document.querySelectorAll('.role-box').forEach(box=>{
       const age=box.dataset.age;
-      const head='<div class="role-head">'+curRole+'可以這樣陪</div>';
-      if(age==='s1'){
-        const r=roleData.s1[curRole];
-        const imgHtml = S1_IMG_READY[curRole]
-          ? '<img src="'+r.img+'" alt="0〜6個月・'+curRole+'用巧虎陪寶寶" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;margin:4px 0 10px;display:block">'
-          : '<div class="ph r43" style="margin:4px 0 10px">0〜6個月・'+curRole+'版<small>示意圖（待替換）</small></div>';
-        box.innerHTML=head+
-          '<div style="margin-bottom:8px"><span class="says">'+r.line+'</span></div>'+
-          imgHtml+
-          '<div class="role-say">'+S1_COMMON.play+'</div>'+
-          '<div class="role-tip">'+S1_COMMON.tip+'</div>';
-      }else{
-        const d=roleData[age][curRole];
-        box.innerHTML=head+
-          '<div class="role-say">'+d.say+'</div>'+
-          '<div class="role-tip">'+d.tip+'</div>';
-      }
+      const d=roleData[age][curRole];
+      const ready=IMG_READY[age]&&IMG_READY[age][curRole];
+      const imgHtml = ready
+        ? '<img src="'+d.img+'" alt="'+STAGE_LABEL[age]+'・'+curRole+'用巧虎陪寶寶" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;margin:4px 0 10px;display:block">'
+        : '<div class="ph r43" style="margin:4px 0 10px">'+STAGE_LABEL[age]+'・'+curRole+'版<small>示意圖（待替換）</small></div>';
+      box.innerHTML='<div class="role-head">'+curRole+'可以這樣陪</div>'+
+                    '<div style="margin-bottom:8px"><span class="says">'+d.line+'</span></div>'+
+                    imgHtml+
+                    '<div class="role-say">'+d.say+'</div>'+
+                    '<div class="role-tip">'+d.tip+'</div>';
     });
   }
   function update(scroll){
