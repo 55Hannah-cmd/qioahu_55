@@ -163,6 +163,19 @@
   /* PURCHASE */
   .buy{text-align:center}
   .buy .ph{aspect-ratio:1/1;max-width:280px;margin:0 auto 20px}
+  .price-card{margin:18px auto 8px;background:#fff;border:2px solid #FFE0A3;border-radius:18px;
+    padding:16px 16px 15px;box-shadow:var(--shadow);max-width:340px;text-align:left}
+  .price-lead{text-align:center;color:var(--yellow-deep);font-weight:900;font-size:13px;margin-bottom:8px}
+  .price-row{display:flex;align-items:baseline;justify-content:center;gap:10px;margin-top:2px}
+  .price-original{color:var(--ink-soft);font-size:13px;font-weight:800;text-decoration:line-through}
+  .price-sale{color:var(--ink);font-size:34px;line-height:1;font-weight:900;letter-spacing:-1px}
+  .price-sale small{font-size:14px;margin-right:2px}
+  .price-set{margin-top:12px;background:#FFF3D6;border:2px dashed var(--coral);border-radius:14px;
+    padding:11px 12px;text-align:center;color:var(--ink);font-weight:900}
+  .price-set .tag{display:inline-block;background:var(--coral);color:#fff;border-radius:999px;
+    font-size:11px;letter-spacing:.5px;padding:2px 9px;margin-bottom:5px}
+  .price-set strong{color:#D9573E;font-size:26px;line-height:1}
+  .price-note{text-align:center;color:var(--ink-soft);font-size:11px;font-weight:700;margin-top:8px}
   .micro{margin-top:14px;display:inline-block;text-align:left}
   .micro div{font-size:13px;color:var(--ink-soft);font-weight:700;padding:2px 0}
   .micro div::before{content:"✓ ";color:var(--yellow-deep)}
@@ -365,6 +378,18 @@
     <img src="images/product.jpg" alt="巧虎手偶商品＋線上影音教學" style="width:100%;max-width:300px;border-radius:var(--radius);display:block;margin:0 auto 20px">
     <h2>讓巧虎，<br>成為寶寶的第一個朋友。</h2>
     <p class="soft" style="margin-top:12px">從今天的第一聲「早安」開始。</p>
+    <div class="price-card">
+      <div class="price-lead">現在入手，陪寶寶一起長大更划算</div>
+      <div class="price-row">
+        <span class="price-original">原價 NT$399</span>
+        <span class="price-sale"><small>NT$</small>299</span>
+      </div>
+      <div class="price-set">
+        <span class="tag">最划算</span><br>
+        和其他學習組合一起帶，<br>巧虎手偶只要 <strong>NT$199</strong>
+      </div>
+      <div class="price-note">※ 實際活動內容請以商品頁面為準</div>
+    </div>
     <a class="btn btn-sub" href="https://store.benesse.com.tw/products/%E5%B7%A7%E8%99%8E%E6%89%8B%E5%81%B6">看看商品詳情</a>
   </section>
 
