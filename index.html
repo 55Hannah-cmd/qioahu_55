@@ -119,9 +119,11 @@
   .role-btn.active .role-icon{mix-blend-mode:multiply}
   .role-box{margin-top:16px;background:#FFF3D6;border-radius:14px;padding:14px 16px}
   .role-box .role-head{font-weight:800;font-size:13px;color:var(--yellow-deep);margin-bottom:6px}
-  .role-box .role-photo{width:82%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;margin:4px auto 10px;display:block}
-  .role-box .role-say{font-size:14.5px;font-weight:700;line-height:1.6}
-  .role-box .role-tip{font-size:13px;color:var(--ink-soft);margin-top:7px;line-height:1.6}
+  .role-box .role-photo{width:82%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;margin:4px auto 10px;display:block;
+    animation:photoSwitch .48s ease both}
+  .role-box .role-head,.role-box .says{animation:textSwitch .42s ease .06s both}
+  .role-box .role-say{font-size:14.5px;font-weight:700;line-height:1.6;animation:textSwitch .48s ease .16s both}
+  .role-box .role-tip{font-size:13px;color:var(--ink-soft);margin-top:7px;line-height:1.6;animation:textSwitch .48s ease .24s both}
   .role-box .role-tip::before{content:"💡 "}
   .stage-cta{margin-top:18px}
 
@@ -187,7 +189,8 @@
   .sticky a{display:flex;align-items:center;justify-content:center;gap:8px;background:#FFB12E;color:var(--ink);text-align:center;
     font-weight:900;font-size:16px;padding:11px 14px;border-radius:999px;text-decoration:none;
     box-shadow:0 6px 16px rgba(232,146,0,.3)}
-  .sticky a img{width:34px;height:34px;object-fit:contain;display:block;background:#FFF2C7;border-radius:50%;padding:2px}
+  .sticky a img{width:34px;height:34px;object-fit:contain;display:block;background:#FFF2C7;border-radius:50%;padding:2px;
+    animation:ctaFaceBounce 3.4s ease-in-out infinite}
   .demo-flag{background:var(--ink);color:#fff;text-align:center;font-size:11.5px;padding:7px;font-weight:700}
 
   .family{position:relative;overflow:hidden;padding-bottom:62px}
@@ -210,6 +213,20 @@
   .reveal{opacity:0;transform:translateY(28px) scale(.98);transition:opacity .85s ease,transform .85s cubic-bezier(.22,1,.36,1);will-change:opacity,transform}
   .reveal.is-visible{opacity:1;transform:translateY(0) scale(1)}
   .age-btn.poyon,.role-btn.poyon{animation:poyon .42s cubic-bezier(.22,1.45,.36,1)}
+  @keyframes photoSwitch{
+    from{opacity:0;transform:translateY(10px) scale(.985)}
+    to{opacity:1;transform:translateY(0) scale(1)}
+  }
+  @keyframes textSwitch{
+    from{opacity:0;transform:translateY(8px)}
+    to{opacity:1;transform:translateY(0)}
+  }
+  @keyframes ctaFaceBounce{
+    0%,72%,100%{transform:translateY(0) scale(1)}
+    78%{transform:translateY(-4px) scale(1.08)}
+    84%{transform:translateY(0) scale(.98)}
+    90%{transform:translateY(-2px) scale(1.03)}
+  }
   @keyframes poyon{
     0%{transform:scale(1)}
     42%{transform:scale(1.07)}
