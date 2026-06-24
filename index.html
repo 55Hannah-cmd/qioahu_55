@@ -171,9 +171,10 @@
 
   .sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;max-width:460px;margin:0 auto;
     background:rgba(255,251,244,.95);backdrop-filter:blur(8px);padding:11px 16px;border-top:1px solid var(--line)}
-  .sticky a{display:block;background:var(--yellow);color:var(--ink);text-align:center;
-    font-weight:900;font-size:16px;padding:14px;border-radius:999px;text-decoration:none;
+  .sticky a{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--yellow);color:var(--ink);text-align:center;
+    font-weight:900;font-size:16px;padding:11px 14px;border-radius:999px;text-decoration:none;
     box-shadow:0 6px 16px rgba(232,146,0,.3)}
+  .sticky a img{width:34px;height:34px;object-fit:contain;display:block;mix-blend-mode:multiply}
   .demo-flag{background:var(--ink);color:#fff;text-align:center;font-size:11.5px;padding:7px;font-weight:700}
 
   .family{position:relative;overflow:hidden;padding-bottom:62px}
@@ -369,7 +370,7 @@
 
 </div>
 
-<div class="sticky"><a href="https://store.benesse.com.tw/products/%E5%B7%A7%E8%99%8E%E6%89%8B%E5%81%B6">立即帶巧虎回家</a></div>
+<div class="sticky"><a href="https://store.benesse.com.tw/products/%E5%B7%A7%E8%99%8E%E6%89%8B%E5%81%B6"><img src="images/cta-qiaohu-smile.png" alt="">立即帶巧虎回家</a></div>
 
 <script>
   const stages=[...document.querySelectorAll('.stage')];
