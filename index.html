@@ -207,7 +207,16 @@
     61%,65%{transform:translateY(33%) rotate(-4deg)}
     70%{transform:translateY(115%) rotate(-8deg)}
   }
-  @media (prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto}}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.is-visible{opacity:1;transform:translateY(0)}
+  .age-btn.poyon,.role-btn.poyon{animation:poyon .42s cubic-bezier(.22,1.45,.36,1)}
+  @keyframes poyon{
+    0%{transform:scale(1)}
+    42%{transform:scale(1.07)}
+    70%{transform:scale(.98)}
+    100%{transform:scale(1)}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto}.reveal{opacity:1!important;transform:none!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -404,6 +413,28 @@
   const journey=document.getElementById('journey');
   const prompt=document.getElementById('journeyPrompt');
 
+  const revealItems=[...document.querySelectorAll('section,.why-block,.stage-card,.trust-row,.summary img,.price-card')];
+  revealItems.forEach(el=>el.classList.add('reveal'));
+  if('IntersectionObserver' in window){
+    const revealObserver=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },{threshold:.14,rootMargin:'0px 0px -40px'});
+    revealItems.forEach(el=>revealObserver.observe(el));
+  }else{
+    revealItems.forEach(el=>el.classList.add('is-visible'));
+  }
+
+  function poyon(btn){
+    btn.classList.remove('poyon');
+    void btn.offsetWidth;
+    btn.classList.add('poyon');
+  }
+
   const roleData={
     s1:{
       '媽媽':{line:'早安～今天也好可愛喔', img:'images/play-0-6-mom.jpg', say:'把巧虎放在寶寶臉前慢慢移動，輕聲打招呼。', tip:'不用太多話，聲音和表情就夠了。'},
@@ -474,11 +505,13 @@
   ageBtns.forEach(b=>b.addEventListener('click',()=>{
     curStage=b.dataset.stage;
     ageBtns.forEach(x=>x.classList.toggle('active',x===b));
+    poyon(b);
     update(true);
   }));
   roleBtns.forEach(b=>b.addEventListener('click',()=>{
     curRole=b.dataset.role;
     roleBtns.forEach(x=>x.classList.toggle('active',x===b));
+    poyon(b);
     update(true);
   }));
   document.getElementById('seeAll').addEventListener('click',()=>{
