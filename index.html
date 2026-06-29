@@ -149,6 +149,8 @@
   .gallery-track{display:flex;gap:10px;width:max-content;animation:scrollx 26s linear infinite}
   .gallery:hover .gallery-track{animation-play-state:paused}
   .gslide{flex:0 0 auto;width:150px}
+  .gslide.photo{width:230px}
+  .gslide img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;display:block;box-shadow:var(--shadow)}
   .gslide .ph{aspect-ratio:3/4;border-radius:16px}
   @keyframes scrollx{from{transform:translateX(0)}to{transform:translateX(-50%)}}
   .review{flex:0 0 78%;background:var(--card);border-radius:14px;padding:14px 16px;box-shadow:var(--shadow)}
@@ -375,6 +377,7 @@
     <p class="center" style="margin-top:24px;font-weight:800;font-size:15px">現場花絮｜巧虎和孩子們</p>
     <div class="gallery">
       <div class="gallery-track" id="galleryTrack">
+        <div class="gslide photo"><img src="images/event-scene-privacy-1.jpg" alt="現場活動中，巧虎和孩子們一起互動的熱鬧畫面"></div>
         <div class="gslide"><div class="ph">活動花絮 1<small>待替換</small></div></div>
         <div class="gslide"><div class="ph">活動花絮 2<small>待替換</small></div></div>
         <div class="gslide"><div class="ph">活動花絮 3<small>待替換</small></div></div>
