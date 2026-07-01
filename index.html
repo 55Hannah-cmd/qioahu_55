@@ -68,16 +68,32 @@
   .hero-cap .sub{margin-top:12px;color:var(--ink-soft);font-size:15px}
   .scrollcue{margin-top:16px;color:var(--yellow-deep);font-weight:800;font-size:13px;
     animation:bob 1.8s ease-in-out infinite;display:flex;flex-direction:column;align-items:center;gap:1px}
+  a.scrollcue{text-decoration:none}
   .scrollcue img{width:58px;height:58px;object-fit:contain;display:block}
   @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
 
   /* WHY */
-  .why-block{margin-top:24px}
+  .why-carousel{margin-top:24px}
+  .why-slider{display:flex;gap:0;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+    margin:0;padding:0 0 8px}
+  .why-slider::-webkit-scrollbar{display:none}
+  .why-block{flex:0 0 100%;scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:22px;
+    padding:14px 14px 16px;box-shadow:var(--shadow)}
   .why-block .ph{margin-bottom:12px}
   .why-img{width:100%;border-radius:var(--radius);display:block;margin-bottom:12px}
-  .why-photo{width:88%;aspect-ratio:4/3;object-fit:cover;object-position:center;border-radius:var(--radius);display:block;margin:0 auto 12px}
-  .why-block h3{width:88%;margin:0 auto 6px;font-size:17px;line-height:1.55}
-  .why-block p{width:88%;margin-left:auto;margin-right:auto;font-size:15px;line-height:1.8}
+  .why-photo{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center;border-radius:18px;display:block;margin:0 auto 12px}
+  .why-block h3{margin:0 2px 6px;font-size:17px;line-height:1.55}
+  .why-block p{margin:0 2px;font-size:14px;line-height:1.75}
+  .swipe-hint{margin-top:5px;text-align:center;color:var(--ink-soft);font-size:12px;font-weight:800}
+  .why-nav{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:10px}
+  .why-nav-btn{border:0;background:#FFF3D6;color:var(--ink);border-radius:999px;padding:6px 13px;
+    display:flex;align-items:center;gap:6px;font-family:inherit;font-weight:900;font-size:12.5px;
+    box-shadow:0 5px 14px rgba(232,146,0,.14);cursor:pointer}
+  .why-nav-btn img{width:38px;height:38px;object-fit:contain;display:block;filter:drop-shadow(0 3px 5px rgba(74,59,50,.14));
+    animation:runQiaohu 1.1s ease-in-out infinite}
+  .why-nav-btn.prev img{transform:scaleX(-1);animation-name:runQiaohuPrev}
+  @keyframes runQiaohu{0%,100%{transform:translateX(0) rotate(-4deg)}50%{transform:translateX(3px) rotate(4deg)}}
+  @keyframes runQiaohuPrev{0%,100%{transform:scaleX(-1) translateX(0) rotate(-4deg)}50%{transform:scaleX(-1) translateX(3px) rotate(4deg)}}
 
   /* SELECTOR */
   .selector{background:linear-gradient(180deg,#FFF0CC,var(--bg))}
@@ -166,7 +182,32 @@
 
   /* PURCHASE */
   .buy{text-align:center}
+  #productPreview{scroll-margin-top:22px}
   .buy .ph{aspect-ratio:1/1;max-width:280px;margin:0 auto 20px}
+  .product-demo{position:relative;max-width:300px;margin:0 auto 20px;padding:16px 16px 14px;border-radius:24px;
+    background:linear-gradient(180deg,#F7F4F2,#FFFFFF);box-shadow:var(--shadow);overflow:hidden}
+  .product-demo::before{content:"";position:absolute;inset:58px 34px auto auto;width:94px;height:94px;border-radius:50%;
+    background:rgba(255,200,61,.18);filter:blur(2px)}
+  .demo-badge{position:relative;display:inline-block;background:#1F83AA;color:#fff;border-radius:999px;
+    font-size:17px;font-weight:900;line-height:1;padding:9px 38px;margin-bottom:8px;box-shadow:0 4px 0 rgba(28,107,139,.18)}
+  .demo-title{position:relative;font-weight:900;color:#5D706F;font-size:17px;line-height:1.45;margin-bottom:10px}
+  .demo-stage{position:relative;min-height:238px;display:flex;align-items:center;justify-content:center}
+  .demo-product{width:76%;max-width:214px;display:block;filter:drop-shadow(0 10px 12px rgba(74,59,50,.18));
+    animation:demoFloat 3.2s ease-in-out infinite}
+  .demo-orbit{position:absolute;left:50%;top:49%;width:84%;height:58%;border:2px dashed rgba(31,131,170,.28);
+    border-radius:50%;transform:translate(-50%,-50%);pointer-events:none}
+  .demo-orbit::before,.demo-orbit::after{position:absolute;top:50%;transform:translateY(-50%);color:#1F83AA;font-weight:900;font-size:18px}
+  .demo-orbit::before{content:"‹";left:-8px}.demo-orbit::after{content:"›";right:-8px}
+  .demo-zoom{position:absolute;right:4px;bottom:18px;background:#1F83AA;color:#fff;border-radius:14px;
+    padding:8px 10px;text-align:left;box-shadow:0 8px 18px rgba(31,131,170,.22)}
+  .demo-zoom strong{display:block;font-size:11px;line-height:1;margin-bottom:4px}
+  .demo-zoom span{display:inline-flex;align-items:center;justify-content:center;width:40px;height:29px;border-radius:8px;
+    background:#fff;color:#1F83AA;font-size:17px;font-weight:900}
+  .demo-features{position:relative;display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-top:5px}
+  .demo-features span{background:#FFF3D6;color:#7A5A16;border:1px solid #FFE0A3;border-radius:999px;
+    padding:4px 9px;font-size:11px;font-weight:900}
+  .demo-note{margin-top:9px;color:var(--ink-soft);font-size:11.5px;font-weight:800;line-height:1.6}
+  @keyframes demoFloat{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-5px) rotate(1deg)}}
   .price-card{margin:18px auto 8px;background:#fff;border:2px solid #FFE0A3;border-radius:18px;
     padding:16px 16px 15px;box-shadow:var(--shadow);max-width:340px;text-align:left}
   .price-lead{text-align:center;color:var(--yellow-deep);font-weight:900;font-size:13px;margin-bottom:8px}
@@ -214,7 +255,7 @@
   }
   .reveal{opacity:0;transform:translateY(28px) scale(.98);transition:opacity .85s ease,transform .85s cubic-bezier(.22,1,.36,1);will-change:opacity,transform}
   .reveal.is-visible{opacity:1;transform:translateY(0) scale(1)}
-  .age-btn.poyon,.role-btn.poyon{animation:poyon .42s cubic-bezier(.22,1.45,.36,1)}
+  .age-btn.poyon,.role-btn.poyon,.why-nav-btn.poyon{animation:poyon .42s cubic-bezier(.22,1.45,.36,1)}
   @keyframes photoSwitch{
     from{opacity:0;transform:translateY(10px) scale(.985)}
     to{opacity:1;transform:translateY(0) scale(1)}
@@ -250,7 +291,10 @@
     <div class="hero-cap">
       <h1>寶寶的第一個朋友，<br>從巧虎開始。</h1>
       <p class="sub">從聲音陪伴，到一起說話、一起玩，<br>每個階段，巧虎都剛剛好。</p>
-      <div class="scrollcue"><img src="images/qiaohu-search.png" alt="虫眼鏡をのぞく巧虎"><span>往下看 ↓</span></div>
+      <a class="scrollcue" href="#productPreview" aria-label="巧虎手偶をじっくり確認する">
+        <img src="images/qiaohu-search.png" alt="虫眼鏡をのぞく巧虎">
+        <span>看手偶細節 ↓</span>
+      </a>
     </div>
   </header>
 
@@ -262,21 +306,36 @@
       <h2>這些每天的話，由巧虎來說，<br>就不一樣了。</h2>
       <p class="soft" style="margin-top:14px;font-size:14px">每天對寶寶說的每一句話，<br>只要透過巧虎，<br>就變成「好朋友巧虎」對寶寶說的話。</p>
     </div>
-    <div class="why-block">
-      <img class="why-photo" src="images/why1-mom-baby.jpg" alt="媽媽用巧虎手偶逗寶寶">
-      <h3>有了巧虎，日常也變成遊戲</h3>
-      <p class="soft">早安、吃飯囉、好好玩喔，都能變成寶寶喜歡的互動。</p>
+    <div class="why-carousel">
+      <div class="why-slider" id="whySlider" aria-label="巧虎手偶のポイント">
+        <div class="why-block">
+          <img class="why-photo" src="images/why1-mom-baby.jpg" alt="媽媽用巧虎手偶逗寶寶">
+          <h3>有了巧虎，日常也變成遊戲</h3>
+          <p class="soft">早安、吃飯囉、好好玩喔，都能變成寶寶喜歡的互動。</p>
+        </div>
+        <div class="why-block">
+          <img class="why-photo" src="images/why2-tiger-closeup.jpg" alt="巧虎手偶鮮明的黃色特寫">
+          <h3>鮮明的角色，寶寶記得住</h3>
+          <p class="soft">從小寶寶到會跑會跳的孩子，都記得這隻黃色的好朋友。</p>
+        </div>
+        <div class="why-block">
+          <img class="why-photo" src="images/why3-family.jpg" alt="阿公用巧虎手偶逗寶寶，全家一起陪伴">
+          <h3>全家都能變成巧虎</h3>
+          <p class="soft">媽媽、爸爸、阿公阿嬤，對寶寶來說都是同一個好朋友。</p>
+        </div>
+      </div>
+      <div class="why-nav" aria-label="巧虎手偶ポイント切り替え">
+        <button class="why-nav-btn prev" type="button" data-why-dir="-1" aria-label="前のポイントへ">
+          <img src="images/qiaohu-peek.png" alt="">
+          <span>上一個</span>
+        </button>
+        <button class="why-nav-btn next" type="button" data-why-dir="1" aria-label="次のポイントへ">
+          <span>下一個</span>
+          <img src="images/qiaohu-peek.png" alt="">
+        </button>
+      </div>
     </div>
-    <div class="why-block">
-      <img class="why-photo" src="images/why2-tiger-closeup.jpg" alt="巧虎手偶鮮明的黃色特寫">
-      <h3>鮮明的角色，寶寶記得住</h3>
-      <p class="soft">從小寶寶到會跑會跳的孩子，都記得這隻黃色的好朋友。</p>
-    </div>
-    <div class="why-block">
-      <img class="why-photo" src="images/why3-family.jpg" alt="阿公用巧虎手偶逗寶寶，全家一起陪伴">
-      <h3>全家都能變成巧虎</h3>
-      <p class="soft">媽媽、爸爸、阿公阿嬤，對寶寶來說都是同一個好朋友。</p>
-    </div>
+    <p class="swipe-hint">左右滑動，或點巧虎切換 3 個重點 →</p>
     <p class="center" style="margin-top:22px;font-weight:800;color:var(--yellow-deep);font-size:15px">而且，陪伴的方式，會隨著寶寶長大一起改變。</p>
   </section>
 
@@ -397,8 +456,25 @@
   </section>
 
   <!-- PURCHASE -->
-  <section class="buy">
-    <img src="images/product.jpg" alt="巧虎手偶商品＋線上影音教學" style="width:100%;max-width:300px;border-radius:var(--radius);display:block;margin:0 auto 20px">
+  <section class="buy" id="productPreview">
+    <div class="product-demo" aria-label="巧虎手偶3D展示功能示意">
+      <div class="demo-badge">巧虎手偶</div>
+      <div class="demo-title">3D・放大・360°確認<br>素材準備中</div>
+      <div class="demo-stage">
+        <div class="demo-orbit" aria-hidden="true"></div>
+        <img class="demo-product" src="images/product.jpg" alt="巧虎手偶商品示意">
+        <div class="demo-zoom" aria-hidden="true">
+          <strong>放大看質感</strong>
+          <span>＋</span>
+        </div>
+      </div>
+      <div class="demo-features">
+        <span>布料質感</span>
+        <span>背面細節</span>
+        <span>360°旋轉</span>
+      </div>
+      <p class="demo-note">之後會放入實拍素材，讓你不用到現場，也能看清楚巧虎手偶的大小與細節。</p>
+    </div>
     <h2>讓巧虎，<br>成為寶寶的第一個朋友。</h2>
     <p class="soft" style="margin-top:12px">從今天的第一聲「早安」開始。</p>
     <div class="price-card">
@@ -427,7 +503,7 @@
   const journey=document.getElementById('journey');
   const prompt=document.getElementById('journeyPrompt');
 
-  const revealItems=[...document.querySelectorAll('.hero-cap,.why-block,.age-grid,.stage-card,.family .center,.trust .center,.trust-row,.gallery,.reviews,.summary img,.summary h2,.summary p,.buy > img,.buy h2,.buy .soft,.price-card,.btn-sub')];
+  const revealItems=[...document.querySelectorAll('.hero-cap,.why-carousel,.swipe-hint,.age-grid,.stage-card,.family .center,.trust .center,.trust-row,.gallery,.reviews,.summary img,.summary h2,.summary p,.product-demo,.buy h2,.buy .soft,.price-card,.btn-sub')];
   revealItems.forEach(el=>el.classList.add('reveal'));
   requestAnimationFrame(()=>requestAnimationFrame(()=>{
     if('IntersectionObserver' in window){
@@ -450,6 +526,28 @@
     void btn.offsetWidth;
     btn.classList.add('poyon');
   }
+
+  const whySlider=document.getElementById('whySlider');
+  const whyCards=whySlider ? [...whySlider.querySelectorAll('.why-block')] : [];
+  const whyBtns=[...document.querySelectorAll('.why-nav-btn')];
+  let whyIndex=0;
+  function goWhy(dir){
+    if(!whySlider||!whyCards.length) return;
+    whyIndex=Math.max(0,Math.min(whyCards.length-1,whyIndex+dir));
+    whySlider.scrollTo({left:whyIndex*whySlider.clientWidth,behavior:'smooth'});
+  }
+  if(whySlider){
+    whySlider.addEventListener('scroll',()=>{
+      window.requestAnimationFrame(()=>{
+        whyIndex=Math.round(whySlider.scrollLeft/Math.max(1,whySlider.clientWidth));
+        whyIndex=Math.max(0,Math.min(whyCards.length-1,whyIndex));
+      });
+    },{passive:true});
+  }
+  whyBtns.forEach(btn=>btn.addEventListener('click',()=>{
+    poyon(btn);
+    goWhy(Number(btn.dataset.whyDir||1));
+  }));
 
   const roleData={
     s1:{
